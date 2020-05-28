@@ -1,0 +1,99 @@
+{
+  "connect.name": "com.example.model.Customer",
+  "fields": [
+    {
+      "name": "customerNumber",
+      "type": "int"
+    },
+    {
+      "name": "customerName",
+      "type": "string"
+    },
+    {
+      "name": "contactLastName",
+      "type": "string"
+    },
+    {
+      "name": "contactFirstName",
+      "type": "string"
+    },
+    {
+      "name": "phone",
+      "type": "string"
+    },
+    {
+      "name": "addressLine1",
+      "type": "string"
+    },
+    {
+      "default": null,
+      "name": "addressLine2",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "default": null,
+      "name": "state",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "default": null,
+      "name": "postalCode",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "default": null,
+      "name": "salesRepEmployeeNumber",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "default": null,
+      "name": "creditLimit",
+      "type": [
+        "null",
+        {
+          "connect.name": "org.apache.kafka.connect.data.Decimal",
+          "connect.parameters": {
+            "connect.decimal.precision": "10",
+            "scale": "2"
+          },
+          "connect.version": 1,
+          "logicalType": "decimal",
+          "precision": 10,
+          "scale": 2,
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "__deleted",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ],
+  "name": "Customer",
+  "namespace": "com.example.model",
+  "type": "record"
+}

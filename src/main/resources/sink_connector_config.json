@@ -1,0 +1,21 @@
+{
+  "name": "demo_sink_connector",
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+  "value.converter": "io.confluent.connect.avro.AvroConverter",
+  "errors.log.enable": "true",
+  "errors.log.include.messages": "true",
+  "topics": "curatedcustomer",
+  "connection.url": "jdbc:mysql://localhost:3306/curated",
+  "connection.user": "root",
+  "connection.password": "<notarealpassword>",
+  "insert.mode": "upsert",
+  "table.name.format": "${topic}",
+  "pk.mode": "record_key",
+  "pk.fields": "customerNumber",
+  "auto.create": "true",
+  "auto.evolve": "true",
+  "key.converter.schemas.enable": "false",
+  "value.converter.schema.registry.url": "http://localhost:8081",
+  "value.converter.schemas.enable": "true"
+}

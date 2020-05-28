@@ -1,0 +1,36 @@
+{
+  "connect.name": "com.example.model.CuratedCustomer",
+  "fields": [
+    {
+      "name": "customerNumber",
+      "type": "int"
+    },
+    {
+      "name": "customerName",
+      "type": "string"
+    },
+    {
+      "name": "contactLastName",
+      "type": "string"
+    },
+    {
+      "name": "contactFirstName",
+      "type": "string"
+    },
+    {
+      "default": null,
+      "name": "state",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country",
+      "type": "string"
+    }
+  ],
+  "name": "CuratedCustomer",
+  "namespace": "com.example.model",
+  "type": "record"
+}

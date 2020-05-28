@@ -1,0 +1,55 @@
+spring:
+  profiles: local
+  cloud:
+    stream:
+      default: 
+        producer: 
+          useNativeEncoding: true
+        consumer:  
+          useNativeEncoding: true 
+      bindings:
+        input:
+          destination: avroconnect.poc.customers
+          content-type: application/*+avro
+          group: customercurator
+        output:
+          destination: curatedcustomer
+          content-type: application/*+avro
+      kafka:
+        binder:
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.IntegerSerializer
+            value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
+            schema.registry.url: http://localhost:9081
+          consumer-properties:
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+            schema.registry.url: http://localhost:9081
+---
+spring:  profiles: dev
+  cloud:
+    stream:
+      default: 
+        producer: 
+          useNativeEncoding: true
+        consumer:  
+          useNativeEncoding: true 
+      bindings:
+        input:
+          destination: avroconnect.poc.customers
+          content-type: application/*+avro
+          group: customercurator
+        output:
+          destination: curatedcustomer
+          content-type: application/*+avro
+      kafka:
+        binder:
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.IntegerSerializer
+            value.serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
+            schema.registry.url: http://localhost:9081
+          consumer-properties:
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value.deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+            schema.registry.url: http://localhost:9081
+  
